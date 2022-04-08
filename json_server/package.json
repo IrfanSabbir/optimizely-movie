@@ -1,0 +1,20 @@
+{
+  "name": "json_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server -p 3006 -w db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "json-server": "^0.17.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^6.1.2"
+  }
+}
