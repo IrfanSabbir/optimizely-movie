@@ -53,13 +53,3 @@ const fetchMovies = async()=> {
   fs.writeFileSync('movies.json', JSON.stringify(uniqueList, null, 2))
 }
 fetchMovies();
-
-const f1= require('./movies.json')
-const uniqueDo =() => {
-  const uniqueList = _.uniqBy(f1, 'title');
-  fs.writeFileSync('movies2.json', JSON.stringify(uniqueList, null, 2))
-
-  console.log(uniqueList.length);
-
-}
-// uniqueDo();

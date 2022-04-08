@@ -36,13 +36,9 @@ export default function MovieDetails({ open, setOpen, moiveId }) {
 
   return (
     <div>
-      <Dialog
-        open={open}
-        onClose={setOpen}
-        maxWidth="lg"
-      >
+      <Dialog open={open} onClose={setOpen} maxWidth="lg">
         <DialogTitle className="Title">Movie Details</DialogTitle>
-        <DialogContent style={{ width: "60vw" }}>
+        <DialogContent className="DialogueWrapper">
           {loading ? (
             <>
               <LinearProgress color="secondary" />
@@ -60,16 +56,12 @@ export default function MovieDetails({ open, setOpen, moiveId }) {
                   sm={12}
                   md={6}
                   lg={5}
-                  style={{ textAlign: "center" }}
+                  className="CenterContent"
                 >
-                  <img
-                    src={movie.image}
-                    alt={movie.title}
-                    style={{ borderRadius: "20px" }}
-                  />
+                  <img src={movie.image} alt={movie.title} className="image" />
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} lg={7}>
-                  <div style={{ height: "40px" }}>
+                  <div>
                     <p className="Title">
                       {movie.title} ({movie.year})
                     </p>

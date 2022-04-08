@@ -20,13 +20,13 @@ const SearchParams = ({
     }
   };
   return (
-    <div style={{ textAlign: "right" }}>
+    <div className="RightContent">
       <div>
         <FormControl
           variant="filled"
           sx={{ m: 2, minWidth: 0 }}
           color="secondary"
-          style={{ background: "white" }}
+          className="WhiteBackground"
         >
           <TextField
             variant="filled"
@@ -43,9 +43,9 @@ const SearchParams = ({
           variant="filled"
           sx={{ m: 2, minWidth: 120 }}
           color="secondary"
-          style={{ background: "white" }}
+          className="WhiteBackground"
         >
-          <InputLabel style={{ fontSize: "20px" }}>Limit</InputLabel>
+          <InputLabel>Limit</InputLabel>
           <Select
             color="primary"
             value={searchParams.limit}

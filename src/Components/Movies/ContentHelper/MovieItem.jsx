@@ -11,7 +11,7 @@ const MovieItemShow = ({ setMoiveId, setShowDetails, movie }) => (
     <Paper
       variant="elevation"
       elevation={3}
-      style={{ padding: "10px" }}
+      className="MovieCardPaper"
       onClick={() => {
         setMoiveId(movie.id);
         setShowDetails(true);
@@ -20,13 +20,13 @@ const MovieItemShow = ({ setMoiveId, setShowDetails, movie }) => (
       <img
         src={movie.image}
         alt={movie.title}
-        style={{ width: "70%", height: "250px" }}
+        className="image imageThumbnail"
       />
       <hr />
-      <div style={{ height: "40px" }}>
-        <p style={{ font: "20px", fontWeight: "bold" }}>{movie.title}</p>
+      <div className="MovieItemTestHeight">
+        <p className="SubTitle">{movie.title}</p>
       </div>
-      <p style={{ font: "20px", fontWeight: "bold" }}>({movie.year})</p>
+      <p className="SubTitle">({movie.year})</p>
     </Paper>
   </div>
 );

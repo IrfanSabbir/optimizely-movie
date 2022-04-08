@@ -32,12 +32,7 @@ function IndexPage() {
           </p>
         </div>
       </div>
-      <div
-        style={{
-          paddingBottom: "20px",
-          width: "100%",
-        }}
-      >
+      <div>
         {showTabs[0] && <ItemList title="All Movies" />}
         {showTabs[1] && <ItemList title="Trending Movies" popular="2021" />}
       </div>
