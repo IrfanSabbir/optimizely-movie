@@ -1,5 +1,4 @@
-
-import axios from "axios"
+import axios from "axios";
 export const fetchListMovies = async (params) => {
   try {
     let baseUrl = `${process.env.REACT_APP_BASE_URL}?_limit=${params.limit}&_page=${params.page}&_sort=title&_order=asc`;
@@ -7,32 +6,34 @@ export const fetchListMovies = async (params) => {
     const headers = {
       // 'X-RapidAPI-Host': process.env.REACT_APP_RAPID_API_HOST,
       // 'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     };
 
     if (params.popular) {
-      baseUrl += `&year=${params.popular}`
+      baseUrl += `&year=${params.popular}`;
     }
 
-    const result  = await axios.get(baseUrl, {headers});
-    return result.data
-        
-  } catch (error) {
-    throw new Error(error)
-  }
-}
+    if (params.title) {
+      baseUrl += `&title=${params.title}`;
+    }
 
-export const fetchMovieById = async (params) => {
+    const result = await axios.get(baseUrl, { headers });
+    return result.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const fetchMovieById = async (movie_id) => {
   try {
-    let baseUrl = `${process.env.REACT_APP_BASE_URL}/${params.movie_id}`;
+    let baseUrl = `${process.env.REACT_APP_BASE_URL}/${movie_id}`;
 
     const headers = {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     };
-    const result  = await axios.get(baseUrl, {headers});
-    console.log(result)
-    return result
+    const result = await axios.get(baseUrl, { headers });
+    return result.data;
   } catch (error) {
-    throw new Error(error)
+    throw new Error(error);
   }
-}
+};

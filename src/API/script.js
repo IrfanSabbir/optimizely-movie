@@ -45,6 +45,6 @@ const fetchMovies = async()=> {
    if(count ===15) break;
    count ++;
   }
-  fs.writeFileSync('movies.JSON', JSON.stringify(list, null, 2))
+  fs.writeFileSync('movies.json', JSON.stringify(list, null, 2))
 }
 fetchMovies();

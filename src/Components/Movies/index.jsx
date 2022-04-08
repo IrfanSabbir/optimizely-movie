@@ -38,8 +38,8 @@ function IndexPage() {
           width: "100%",
         }}
       >
-        {showTabs[0] && <ItemList title="All Movies"/>}
-        {showTabs[1] && <ItemList title="Trending Movies" popular="2021"/>}
+        {showTabs[0] && <ItemList title="All Movies" />}
+        {showTabs[1] && <ItemList title="Trending Movies" popular="2021" />}
       </div>
     </React.Fragment>
   );

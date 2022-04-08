@@ -36,6 +36,37 @@
 .TabItemActive {
   color: #7f7bba;
   border-bottom: 2px solid #eeeeee;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
 
+}
+
+.MovieGrid {
+  cursor: pointer;
+}
+
+.MovieGrid :hover {
+  background-color: #9b0cef;
+}
+
+.Title {
+  font-size: 25px;
+  font-weight: bold;
+  color: #9b0cef;
+}
+
+.SubTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0f0d10;
+}
+.SubText {
+  font-size: 18px;
+  color: #202020;
+}
+
+.PointText {
+  font-size: 20px;
+  color: #01146a;
+
+  padding: 5px;
 }
