@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  LinearProgress,
   Grid,
   DialogTitle,
   DialogContent,
@@ -10,6 +9,7 @@ import {
 } from "@mui/material";
 
 import { fetchMovieById } from "../../../API/movieFetcher";
+import Spinner from "../ContentHelper/Spinner";
 
 export default function MovieDetails({ open, setOpen, moiveId }) {
   const [loading, setLoading] = useState(false);
@@ -40,13 +40,7 @@ export default function MovieDetails({ open, setOpen, moiveId }) {
         <DialogTitle className="Title">Movie Details</DialogTitle>
         <DialogContent className="DialogueWrapper">
           {loading ? (
-            <>
-              <LinearProgress color="secondary" />
-              <br />
-              <LinearProgress color="secondary" />
-              <br />
-              <LinearProgress color="secondary" />
-            </>
+            <Spinner />
           ) : (
             <>
               <Grid container spacing={3}>
@@ -76,7 +70,9 @@ export default function MovieDetails({ open, setOpen, moiveId }) {
                     {movie["genres"] &&
                       movie["genres"].map((genre) => {
                         return (
-                          <span className="PointText">&middot; {genre}</span>
+                          <span key={genre} className="PointText">
+                            &middot; {genre}
+                          </span>
                         );
                       })}
                   </p>
@@ -85,7 +81,9 @@ export default function MovieDetails({ open, setOpen, moiveId }) {
                     {movie["cast"] &&
                       movie["cast"].map((cast) => {
                         return (
-                          <span className="PointText">&middot; {cast}</span>
+                          <span key={cast} className="PointText">
+                            &middot; {cast}
+                          </span>
                         );
                       })}
                   </p>

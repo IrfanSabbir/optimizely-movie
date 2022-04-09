@@ -34,7 +34,11 @@ const SearchParams = ({
             type="search"
             onKeyDown={handleKeyDown}
             onChange={(e) =>
-              setSearchParams({ ...searchParams, title: e.target.value })
+              setSearchParams({
+                ...searchParams,
+                title: e.target.value,
+                page: 1,
+              })
             }
           />
         </FormControl>

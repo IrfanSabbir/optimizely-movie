@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { LinearProgress, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 
 import { fetchListMovies } from "../../../API/movieFetcher";
 import MovieDetails from "../Details/MovieDialogue";
 import Paginations from "../ContentHelper/Paginations";
 import SearchParams from "../ContentHelper/SearchParams";
 import MovieItemShow from "../ContentHelper/MovieItem";
+import Spinner from "../ContentHelper/Spinner";
 
 const ItemList = ({ title, popular }) => {
   const [moviesList, setMovieList] = useState([]);
@@ -55,13 +56,7 @@ const ItemList = ({ title, popular }) => {
       />
       <br />
       {loading ? (
-        <>
-          <LinearProgress color="secondary" />
-          <br />
-          <LinearProgress color="secondary" />
-          <br />
-          <LinearProgress color="secondary" />
-        </>
+        <Spinner />
       ) : (
         <>
           <Grid container spacing={2}>
